@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Contact;
 use App\Models\Content;
+use App\Models\Packages;
 use App\Models\Partner;
 use App\Models\Slider;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\View\View;
 use Spatie\Sitemap\SitemapGenerator;
 
 class HomeController extends Controller
@@ -24,8 +26,15 @@ class HomeController extends Controller
             ->with('content')
             ->has('content', '>=', 3)
             ->get();
+        $packages = Packages::where('status', 1)->orderBy('id', 'desc')->get();
         return view('frontend.index', get_defined_vars());
 
+    }
+
+    public function packages(): View
+    {
+        $packages = Packages::where('status', 1)->orderBy('id', 'desc')->get();
+        return view('frontend.packages.index', get_defined_vars());
     }
 
     public function search(Request $request)
@@ -56,7 +65,7 @@ class HomeController extends Controller
             ->orWhereTranslation('meta_title', 'LIKE', '%' . $keyword . '%')
             ->orWhereTranslation('alt', 'LIKE', '%' . $keyword . '%')
             ->paginate(9);
-        return view('frontend.content.search',get_defined_vars());
+        return view('frontend.content.search', get_defined_vars());
     }
 
     public function sendMessage(Request $request)

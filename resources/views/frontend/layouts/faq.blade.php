@@ -1,34 +1,34 @@
-<div style='padding:0 15px' class="order-lg-2 order-1">
-    <div class="faq-detail mb-sm-60 mb-xs-50">
-        <div class="content">
-            <div class="row">
-                <div class="col-12">
-                    <div class="what-is-included mt-3">
-                        <div class="faq-accordion yellow-color">
-                            <div id="accordion">
-                                @foreach($faqs as $faqKey => $faq)
-                                    <div class="card @if($loop->first) actives @endif">
-                                        <div class="card-header" id="heading{{ $faqKey }}">
-                                            <h5 class="mb-0">
-                                                <a class="" data-toggle="collapse" data-target="#collapse{{ $faqKey }}"
-                                                   aria-expanded="true" aria-controls="collapse{{ $faqKey }}">
-                                                    {{ $faq->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}
-                                                </a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapse{{ $faqKey }}" class="collapse @if($loop->first) show @endif"
-                                             aria-labelledby="heading{{ $faqKey }}" data-parent="#accordion">
-                                            <div class="card-body">
-                                                {!! $faq->translate(app()->getLocale())->description ?? __('backend.translation-not-found') !!}
-                                            </div>
-                                        </div>
-                                    </div>
-                                @endforeach
+<section class="faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="accordion" id="accordion" role="tablist">
+                    @foreach($faqs as $faqKey => $faq)
+                        <div class="card">
+                            <div class="card-header" role="tab" id="heading{{$faqKey}}">
+                                <a data-toggle="collapse" href="#collapse{{$faqKey}}" aria-expanded="true"
+                                   aria-controls="collapse{{$faqKey}}">
+                                    {{ $faq->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}
+                                </a>
+                            </div>
+                            <div id="collapse{{$faqKey}}" class="collapse {{ ($loop->first) ? 'show' : '' }}"
+                                 role="tabpanel"
+                                 aria-labelledby="heading{{$faqKey}}" data-parent="#accordion">
+                                <div class="card-body">
+                                    {!! $faq->translate(app()->getLocale())->description ?? __('backend.translation-not-found') !!}
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    @endforeach
                 </div>
+            </div>
+            <div class="col-lg-4">
+                <aside class="sidebox">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>@lang('backend.zuhur')</h3>
+                    <p>@lang('backend.faq')</p>
+                </aside>
             </div>
         </div>
     </div>
-</div>
+</section>

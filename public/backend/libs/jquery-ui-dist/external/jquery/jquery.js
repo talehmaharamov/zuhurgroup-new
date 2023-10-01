@@ -7739,7 +7739,7 @@ function Animation( elem, properties, options ) {
 				// Support: Android 2.3
 				// Archaic crash bug won't allow us to use `1 - ( 0.5 || 0 )` (#12497)
 				temp = remaining / animation.duration || 0,
-				percent = 1 - temp,
+				mpercent = 1 - temp,
 				index = 0,
 				length = animation.tweens.length;
 

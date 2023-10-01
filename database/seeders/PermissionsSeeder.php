@@ -21,7 +21,8 @@ class PermissionsSeeder extends Seeder
             'blog',
             'partner',
             'faq',
-            'meta'
+            'meta',
+            'packages',
         ];
         foreach ($permissions as $permission) {
             add_permission($permission);

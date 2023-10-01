@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth:admin', 'as' => 'backend.'], function () {
     });
     Route::get('delete/photo/{model}/{id}', [App\Http\Controllers\Backend\HomeController::class, 'deletePhoto'])->name('deletePhoto');
     Route::group(['name' => 'status'], function () {
+        Route::get('packages/{id}/change-status', [App\Http\Controllers\Backend\PackagesController::class, 'status'])->name('packagesStatus');
         Route::get('meta/{id}/change-status', [App\Http\Controllers\Backend\MetaController::class, 'status'])->name('metaStatus');
         Route::get('faq/{id}/change-status', [App\Http\Controllers\Backend\FaqController::class, 'status'])->name('faqStatus');
         Route::get('partner/{id}/change-status', [App\Http\Controllers\Backend\PartnerController::class, 'status'])->name('partnerStatus');
@@ -39,6 +40,7 @@ Route::group(['middleware' => 'auth:admin', 'as' => 'backend.'], function () {
         })->name('permissionsStatus');
     });
     Route::group(['name' => 'delete'], function () {
+        Route::get('packages/{id}/delete', [App\Http\Controllers\Backend\PackagesController::class, 'delete'])->name('packagesDelete');
         Route::get('meta/{id}/delete', [App\Http\Controllers\Backend\MetaController::class, 'delete'])->name('metaDelete');
         Route::get('faq/{id}/delete', [App\Http\Controllers\Backend\FaqController::class, 'delete'])->name('faqDelete');
         Route::get('partner/{id}/delete', [App\Http\Controllers\Backend\PartnerController::class, 'delete'])->name('partnerDelete');
@@ -60,6 +62,7 @@ Route::group(['middleware' => 'auth:admin', 'as' => 'backend.'], function () {
         Route::get('/newsletter/{id}/delete', [App\Http\Controllers\Backend\NewsletterController::class, 'delNewsletter'])->name('delNewsletter');
     });
     Route::group(['name' => 'resource'], function () {
+        Route::resource('/packages', App\Http\Controllers\Backend\PackagesController::class);
         Route::resource('/meta', App\Http\Controllers\Backend\MetaController::class);
         Route::resource('/faq', App\Http\Controllers\Backend\FaqController::class);
         Route::resource('/partner', App\Http\Controllers\Backend\PartnerController::class);

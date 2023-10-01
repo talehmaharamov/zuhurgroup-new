@@ -25,6 +25,7 @@ Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLangua
     Route::post('/newsletter-add-new', [FHome::class, 'newsletter'])->name('newsletter');
     Route::get('/newsletter/{id}/{token}', [FHome::class, 'verifyMail'])->name('verifyMail');
     Route::get('18', [FHome::class, 'agreeTerm'])->name('18');
+    Route::get('repair-packages', [FHome::class, 'packages'])->name('repair-packages');
     Route::get('mail/test', function () {
         return view('backend.mail.send');
     });

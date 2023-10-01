@@ -5,7 +5,65 @@
 * {
   outline: none !important;
 }
+.section-title h2 {
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 6px;
+    color: #000;
+    letter-spacing: 0.3px;
+    padding: 0;
+}
 
+.section-title::after {
+    content: "";
+    height: 3px;
+    background: #fbb900;
+    width: 80px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+section.client {
+    padding: 4em 0em;
+    background-color: #eee;
+
+}
+
+section.client .section-title {
+    margin-bottom: 6em;
+}
+
+.bx-controls {
+    position: relative;
+}
+
+.bx-wrapper .bx-pager {
+    text-align: center;
+    padding-top: 30px;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item, .bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+    display: inline-block;
+    *zoom: 1;
+    *display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: #666;
+    text-indent: -9999px;
+    display: block;
+    width: 10px;
+    height: 10px;
+    margin: 0 5px;
+    outline: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
 body {
   margin: 0;
   padding: 0;
@@ -1342,7 +1400,7 @@ button[type=submit] {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 150px 0;
+  padding: 90px 0;
   background: #f9f9f9;
   text-align: center;
 }
@@ -1661,7 +1719,7 @@ button[type=submit] {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 150px;
+  padding-top: 80px;
   margin-bottom: 100px;
   background-size: auto 120%;
   background-position: right;
@@ -1673,8 +1731,8 @@ button[type=submit] {
   max-width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 80px 50px;
-  margin-bottom: -100px;
+  padding: 30px 30px;
+  margin-bottom: 50px;
   color: #fff;
   background: #9f8054;
   position: relative;

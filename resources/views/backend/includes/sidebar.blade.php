@@ -2,7 +2,7 @@
     <div data-simplebar class="h-100" style="overflow-y: auto;">
         <div id="sidebar-menu">
             <ul class="metismenu list-unstyled" id="side-menu">
-{{--                {{ creation('Meta','Meta',true,false) }}--}}
+{{--                {{ creation('Packages','Packages',true,false) }}--}}
                 <li>
                     <a href="{{ route('backend.dashboard') }}" class="waves-effect">
                         <i class="ri-home-4-fill"></i>
@@ -31,6 +31,14 @@
                         <a href="{{ route('backend.categories.index') }}" class="waves-effect">
                             <i class="fas fa-bars"></i>
                             <span>@lang('backend.categories')</span>
+                        </a>
+                    </li>
+                @endcan
+                @can('packages index')
+                    <li>
+                        <a href="{{ route('backend.packages.index') }}" class="waves-effect">
+                            <i class="fas fa-box"></i>
+                            <span>@lang('backend.repair-packages')</span>
                         </a>
                     </li>
                 @endcan

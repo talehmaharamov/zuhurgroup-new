@@ -1,13 +1,14 @@
-<div class="element-slider-section section bg-gray pt-100 pt-lg-80 pt-md-70 pt-sm-60 pt-xs-50 pb-100 pb-lg-80 pb-md-70 pb-sm-60 pb-xs-50">
+<section class="logos">
     <div class="container">
         <div class="row">
-            <div class="brand-slider section">
-                @foreach($partners as $partner)
-                    <a target="_blank" href="{{ $partner->link }}">
-                        <div class="brand col"><img src="{{ asset($partner->photo) }}" alt="{{ $partner->alt }}"></div>
-                    </a>
-                @endforeach
-            </div>
+            @foreach($partners as $partner)
+                <div class="col-lg-2 col-md-4 col-sm-6 col-6 wow fadeInUp" data-wow-delay="0s">
+                    <figure>
+                        <img src="{{ asset($partner->photo) }}">
+                        <h6>{{ $partner->alt }}</h6>
+                    </figure>
+                </div>
+            @endforeach
         </div>
     </div>
-</div>
+</section>
