@@ -31,5 +31,17 @@
                 </div>
             </div>
         </section>
+    @else
+        <section class="error404">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                          <h2 class="mb-4">@lang('backend.data-not-found')</h2>
+                        <a href={{ route('frontend.index') }}>@lang('backend.go-to-back')</a>
+                    </div>
+                </div>
+            </div>
+        </section>
     @endif
+
 @endsection

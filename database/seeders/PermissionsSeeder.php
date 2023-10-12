@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+
 class PermissionsSeeder extends Seeder
 {
     public function run(): void
@@ -23,6 +24,8 @@ class PermissionsSeeder extends Seeder
             'faq',
             'meta',
             'packages',
+            'style',
+            'video',
         ];
         foreach ($permissions as $permission) {
             add_permission($permission);

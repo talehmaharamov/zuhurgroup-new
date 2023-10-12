@@ -9,6 +9,7 @@ use App\Models\Content;
 use App\Models\Packages;
 use App\Models\Partner;
 use App\Models\Slider;
+use App\Models\Style;
 use Exception;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
@@ -27,6 +28,7 @@ class HomeController extends Controller
             ->has('content', '>=', 3)
             ->get();
         $packages = Packages::where('status', 1)->orderBy('id', 'desc')->get();
+        $styles = Style::where('status',1)->get();
         return view('frontend.index', get_defined_vars());
 
     }

@@ -4,6 +4,7 @@
     @include('frontend.includes.index-header')
     @include('frontend.layouts.slider')
     @include('frontend.layouts.counter')
+    @include('frontend.layouts.styles')
     @include('frontend.layouts.repair-packages')
     @include('frontend.layouts.carousel')
     @include('frontend.layouts.faq')

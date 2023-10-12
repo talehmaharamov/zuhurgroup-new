@@ -2030,7 +2030,7 @@ button[type=submit] {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 150px 0;
+  padding: 30px 0;
 }
 .about-content h2 {
   font-size: 4vw;
@@ -2096,7 +2096,7 @@ button[type=submit] {
   float: left;
 }
 .about-content .gallery-container {
-  margin-bottom: 50px;
+  margin-bottom: 10px;
 }
 
 /* CERTIFICATES */
@@ -2216,7 +2216,7 @@ button[type=submit] {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 150px 0;
+  padding: 20px 0;
 }
 .faq .sidebox {
   width: calc(100% - 70px);
@@ -2328,7 +2328,7 @@ button[type=submit] {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 135px 0;
+  padding: 70px 0;
 }
 .press-relases figure {
   width: 100%;
@@ -2370,7 +2370,7 @@ button[type=submit] {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 150px 0;
+  padding: 40px 0;
 }
 .photo-gallery .gallery-filter {
   width: 100%;
@@ -2544,7 +2544,7 @@ button[type=submit] {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding: 150px 0;
+  padding: 50px 0;
 }
 .blog .post {
   width: 100%;
@@ -2999,7 +2999,7 @@ button[type=submit] {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
-  padding-top: 180px;
+  padding-top: 90px;
   padding-bottom: 30px;
   background: #26282b;
 }
