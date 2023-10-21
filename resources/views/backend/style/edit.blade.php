@@ -5,7 +5,7 @@
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-xl-9">
+                    <div class="col-xl-12">
                         <div class="card">
                             <form action="{{ route('backend.style.update',$id) }}" class="needs-validation"
                                   novalidate method="post"
@@ -29,6 +29,16 @@
                                                                value="{{ $style->translate($lan->code)->name ?? __('backend.translation-not-found') }}">
                                                         {!! validation_response('backend.name') !!}
                                                     </div>
+                                                    <div class="mb-3">
+                                                        <label>
+                                                            @lang('backend.alt')
+                                                            <span class="text-danger">*</span>
+                                                        </label>
+                                                        <textarea name="alt[{{ $lan->code }}]" type="text"
+                                                                  class="form-control"
+                                                                  placeholder="@lang('backend.alt')"
+                                                                  rows="3">{{ $style->translate(app()->getLocale())->alt ?? '' }}</textarea>
+                                                    </div>
                                                 </div>
                                             </div>
                                         @endforeach
@@ -37,17 +47,6 @@
                                             <input name="slug" type="text" class="form-control" required
                                                    value="{{ $style->slug }}">
                                             {!! validation_response('backend.slug') !!}
-                                        </div>
-                                        <div class="mb-3">
-                                            <label>@lang('backend.parent') @lang('backend.style')</label>
-                                            <select name="parent" type="text" class="form-control">
-                                                <option value="">-</option>
-                                                @foreach($styles as $fStyle)
-                                                    @continue($fStyle->id == $style->id)
-                                                    <option
-                                                        value="{{ $fStyle->id }}">{{ $fStyle->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</option>
-                                                @endforeach
-                                            </select>
                                         </div>
                                         <div class="mb-3">
                                             <label>@lang('backend.photo')</label>
@@ -70,14 +69,15 @@
                                                                  style="height: 200px; width: 200px; object-fit: cover;">
                                                             <a style="position: absolute; right:5px; top:5px"
                                                                type="button" class="btn btn-danger"
-                                                               href="{{ route('backend.contentPhotoDelete',$photo->id) }}">X</a>
+                                                               href="{{ route('backend.stylePhotoDelete',$photo->id) }}">X</a>
                                                         </div>
                                                     @endforeach
                                                 </div>
                                             @endif
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" id="formCheck2" @if($style->is_home == 1) checked @endif
+                                            <input class="form-check-input" type="checkbox" id="formCheck2"
+                                                   @if($style->is_home == 1) checked @endif
                                                    name="is_home">
                                             <label class="form-check-label" for="formCheck2">
                                                 @lang('backend.is-home')

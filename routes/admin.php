@@ -22,14 +22,8 @@ Route::group(['middleware' => 'auth:admin', 'as' => 'backend.'], function () {
     });
     Route::get('delete/photo/{model}/{id}', [App\Http\Controllers\Backend\HomeController::class, 'deletePhoto'])->name('deletePhoto');
     Route::group(['name' => 'status'], function () {
-Route::get('video/{id}/change-status',[App\Http\Controllers\Backend\VideoController::class,'status'])->name('videoStatus');
-
-Route::get('video/{id}/change-status',[App\Http\Controllers\Backend\VideoController::class,'status'])->name('videoStatus');
-
-Route::get('style/{id}/change-status',[App\Http\Controllers\Backend\StyleController::class,'status'])->name('styleStatus');
-
-Route::get('style/{id}/change-status',[App\Http\Controllers\Backend\StyleController::class,'status'])->name('styleStatus');
-
+        Route::get('video/{id}/change-status', [App\Http\Controllers\Backend\VideoController::class, 'status'])->name('videoStatus');
+        Route::get('style/{id}/change-status', [App\Http\Controllers\Backend\StyleController::class, 'status'])->name('styleStatus');
         Route::get('packages/{id}/change-status', [App\Http\Controllers\Backend\PackagesController::class, 'status'])->name('packagesStatus');
         Route::get('meta/{id}/change-status', [App\Http\Controllers\Backend\MetaController::class, 'status'])->name('metaStatus');
         Route::get('faq/{id}/change-status', [App\Http\Controllers\Backend\FaqController::class, 'status'])->name('faqStatus');
@@ -48,14 +42,8 @@ Route::get('style/{id}/change-status',[App\Http\Controllers\Backend\StyleControl
         })->name('permissionsStatus');
     });
     Route::group(['name' => 'delete'], function () {
-Route::get('video/{id}/delete',[App\Http\Controllers\Backend\VideoController::class,'delete'])->name('videoDelete');
-
-Route::get('video/{id}/delete',[App\Http\Controllers\Backend\VideoController::class,'delete'])->name('videoDelete');
-
-Route::get('style/{id}/delete',[App\Http\Controllers\Backend\StyleController::class,'delete'])->name('styleDelete');
-
-Route::get('style/{id}/delete',[App\Http\Controllers\Backend\StyleController::class,'delete'])->name('styleDelete');
-
+        Route::get('video/{id}/delete', [App\Http\Controllers\Backend\VideoController::class, 'delete'])->name('videoDelete');
+        Route::get('style/{id}/delete', [App\Http\Controllers\Backend\StyleController::class, 'delete'])->name('styleDelete');
         Route::get('packages/{id}/delete', [App\Http\Controllers\Backend\PackagesController::class, 'delete'])->name('packagesDelete');
         Route::get('meta/{id}/delete', [App\Http\Controllers\Backend\MetaController::class, 'delete'])->name('metaDelete');
         Route::get('faq/{id}/delete', [App\Http\Controllers\Backend\FaqController::class, 'delete'])->name('faqDelete');
@@ -66,6 +54,7 @@ Route::get('style/{id}/delete',[App\Http\Controllers\Backend\StyleController::cl
         Route::get('about/{id}/delete', [App\Http\Controllers\Backend\AboutController::class, 'delete'])->name('aboutDelete');
         Route::get('content/{id}/delete', [App\Http\Controllers\Backend\ContentController::class, 'delete'])->name('contentDelete');
         Route::get('content/photo/{id}/delete', [App\Http\Controllers\Backend\ContentController::class, 'deletePhoto'])->name('contentPhotoDelete');
+        Route::get('style/photo/{id}/delete', [App\Http\Controllers\Backend\StyleController::class, 'deletePhoto'])->name('stylePhotoDelete');
         Route::get('/site-languages/{id}/delete', [App\Http\Controllers\Backend\SiteLanguageController::class, 'delSiteLang'])->name('site-languagesDelete');
         Route::get('/contact-us/{id}/delete', [App\Http\Controllers\Backend\ContactController::class, 'delContactUS'])->name('delContactUS');
         Route::get('/settings/{id}/delete', [App\Http\Controllers\Backend\SettingController::class, 'delSetting'])->name('settingsDelete');
@@ -78,14 +67,8 @@ Route::get('style/{id}/delete',[App\Http\Controllers\Backend\StyleController::cl
         Route::get('/newsletter/{id}/delete', [App\Http\Controllers\Backend\NewsletterController::class, 'delNewsletter'])->name('delNewsletter');
     });
     Route::group(['name' => 'resource'], function () {
-Route::resource('/video',App\Http\Controllers\Backend\VideoController::class);
-
-Route::resource('/video',App\Http\Controllers\Backend\VideoController::class);
-
-Route::resource('/style',App\Http\Controllers\Backend\StyleController::class);
-
-Route::resource('/style',App\Http\Controllers\Backend\StyleController::class);
-
+        Route::resource('/video', App\Http\Controllers\Backend\VideoController::class);
+        Route::resource('/style', App\Http\Controllers\Backend\StyleController::class);
         Route::resource('/packages', App\Http\Controllers\Backend\PackagesController::class);
         Route::resource('/meta', App\Http\Controllers\Backend\MetaController::class);
         Route::resource('/faq', App\Http\Controllers\Backend\FaqController::class);

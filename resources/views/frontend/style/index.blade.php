@@ -16,20 +16,21 @@
             data-background="{{ asset('frontend/images/section-bg01.jpg')}}"
             data-stellar-background-ratio="0.9">
             <div class="container">
-              <div class="row">
-            @foreach($styles as $style)
-               <div class="col-xl-3 col-lg-4 col-md-6 service-box-wrap wow fadeInUp" data-wow-delay="0s">
-                   <div class="service-box" style="background-image: url({{ asset($style->photo) }})">
-                       <a href="{{ route('frontend.selectedStyle',$style->slug) }}" alt="{{ $style->translate(app()->getLocale())->alt ?? __('backend.translation-not-found') }}">
-                       <div class="service-info">
-                           <h5>{{ $style->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</h5>
-                           <p>26 November 2018</p>
-                           </div>
-                           </a>
-                           </div>
-                       </div>
-            @endforeach
-        </div>
+                <div class="row">
+                    @foreach($styles as $style)
+                        <div class="col-xl-3 col-lg-4 col-md-6 service-box-wrap wow fadeInUp" data-wow-delay="0s">
+                            <div class="service-box" style="background-image: url({{ asset($style->photo) }})">
+                                <a href="{{ route('frontend.selectedStyle',$style->slug) }}"
+                                   alt="{{ $style->translate(app()->getLocale())->alt ?? __('backend.translation-not-found') }}">
+                                    <div class="service-info">
+                                        <h5>{{ $style->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</h5>
+                                        <p>{{ $style->created_at->format('d.m.Y') }}</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
             </div>
         </section>
     @else
@@ -37,7 +38,7 @@
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                         <h2 class="mb-4">@lang('backend.data-not-found')</h2>
+                        <h2 class="mb-4">@lang('backend.data-not-found')</h2>
                         <a href={{ route('frontend.index') }}>@lang('backend.go-to-back')</a>
                     </div>
                 </div>

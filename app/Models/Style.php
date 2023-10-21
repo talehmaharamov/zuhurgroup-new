@@ -16,15 +16,15 @@ class Style extends Model implements TranslatableContract
     public array $translatedAttributes = ['name'];
     protected $guarded = [];
 
-    public function style(): \Illuminate\Database\Eloquent\Relations\HasMany
-    {
-        return $this->hasMany(Style::class, 'style_id');
-    }
-
-    public function subStyle(): \Illuminate\Database\Eloquent\Relations\BelongsTo
-    {
-        return $this->belongsTo(Style::class, 'style_id');
-    }
+//    public function style(): \Illuminate\Database\Eloquent\Relations\HasMany
+//    {
+//        return $this->hasMany(Style::class, 'style_id');
+//    }
+//
+//    public function subStyle(): \Illuminate\Database\Eloquent\Relations\BelongsTo
+//    {
+//        return $this->belongsTo(Style::class, 'style_id');
+//    }
 
     public function photos(): \Illuminate\Database\Eloquent\Relations\HasMany
     {

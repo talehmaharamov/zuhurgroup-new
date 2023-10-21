@@ -45,7 +45,7 @@
                     <li><a href="{{ route('frontend.videos') }}">@lang('backend.videos')</a></li>
                     <li><a href="{{ route('frontend.repair-packages') }}">@lang('backend.style')</a></li>
                     <li><a href="{{ route('frontend.repair-packages') }}">@lang('backend.repair-packages')</a></li>
-                    <li><a href="#">Butique Room</a></li>
+{{--                    <li><a href="#">Butique Room</a></li>--}}
                 </ul>
             </div>
 

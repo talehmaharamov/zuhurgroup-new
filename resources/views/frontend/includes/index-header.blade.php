@@ -1,13 +1,12 @@
 <header class="slider">
     <div class="slider-container">
         <div class="swiper-wrapper">
-            
-            <div class="swiper-slide" data-background="https://bakstone.az/site/templates/images/video_bg.jpg"
-                 data-stellar-background-ratio="1.15">
-            </div>
-
+            @foreach($sliders as $slider)
+                <div class="swiper-slide" data-background="{{ $slider->photo }}"
+                     data-stellar-background-ratio="1.15">
+                </div>
+            @endforeach
         </div>
-
         <div class="inner-elements">
             <div class="container">
                 <div class="pagination"></div>

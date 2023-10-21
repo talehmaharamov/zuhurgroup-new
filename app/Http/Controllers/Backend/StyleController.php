@@ -36,18 +36,14 @@ class StyleController extends Controller
             $style->photo = upload('style', $request->file('photo'));
             $style->slug = $request->slug;
             $style->is_home = ($request->is_home) ? 1 : 0;
-            if ($request->has('parent') and $request->parent !== null) {
-                $selectedStyle = Style::find($request->parent);
-                $selectedStyle->subStyle()->save($style);
-            } else {
-                $style->save();
-            }
+            $style->save();
             foreach (active_langs() as $lang) {
                 $translation = new StyleTranslation();
                 $translation->locale = $lang->code;
                 $translation->style_id = $style->id;
                 $translation->name = $request->name[$lang->code];
                 $translation->description = $request->description[$lang->code] ?? null;
+                $translation->alt = $request->alt[$lang->code] ?? null;
                 $translation->save();
             }
             foreach (multi_upload('style', $request->file('photos')) as $photo) {
@@ -55,7 +51,6 @@ class StyleController extends Controller
                 $stylePhoto->photo = $photo;
                 $style->photos()->save($stylePhoto);
             };
-
             alert()->success(__('messages.success'));
             return redirect(route('backend.style.index'));
         } catch (Exception $e) {
@@ -94,7 +89,9 @@ class StyleController extends Controller
                 foreach (active_langs() as $lang) {
                     $style->translate($lang->code)->name = $request->name[$lang->code];
                     $style->translate($lang->code)->description = $request->description[$lang->code] ?? null;
+                    $style->translate($lang->code)->alt = $request->alt[$lang->code] ?? null;
                 }
+                $style->is_home = ($request->is_home) ? 1 : 0;
                 $style->save();
             });
             alert()->success(__('messages.success'));
@@ -115,5 +112,11 @@ class StyleController extends Controller
     {
         check_permission('style delete');
         return CRUDHelper::remove_item('\App\Models\Style', $id);
+    }
+
+    public function deletePhoto($id)
+    {
+        check_permission('style delete');
+        return CRUDHelper::remove_item('\App\Models\StylePhotos', $id);
     }
 }

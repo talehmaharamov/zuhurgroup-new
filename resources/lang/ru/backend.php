@@ -143,6 +143,7 @@ return array (
   'search-result' => 'Результаты поиска',
   'security' => 'Безопасность',
   'see-all' => 'Посмотреть все',
+  'selectedStyle' => 'Единый стиль',
   'send' => 'Отправить',
   'send-message' => 'Отправить сообщение',
   'seo-settings' => 'Настройки SEO',

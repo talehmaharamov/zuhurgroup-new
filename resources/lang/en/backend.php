@@ -196,6 +196,7 @@ return array (
   'search-result' => 'Search Result',
   'security' => 'Security',
   'see-all' => 'See All',
+  'selectedStyle' => 'Single style',
   'send' => 'Send',
   'send-message' => 'Send Message',
   'seo-settings' => 'SEO Settings',
