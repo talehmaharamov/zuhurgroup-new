@@ -7,7 +7,7 @@
                          <img src="{{asset('backend/images/favicon-admin.png')}}" alt="logo-sm-light" height="30">
                      </span>
                     <span class="logo-lg justify-content-center">
-                        <img src="{{ asset('backend/images/logo-w.png') }}" alt="logo-light" height="50">
+                        <img src="{{ asset('backend/images/logos/logo-5.png') }}" alt="logo-light" height="50">
                     </span>
                 </a>
             </div>

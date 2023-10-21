@@ -3,6 +3,8 @@
 use App\Http\Controllers\Backend\LanguageController as LChangeLan;
 use App\Http\Controllers\Frontend\HomeController as FHome;
 use App\Http\Controllers\Frontend\AboutController as FAbout;
+use App\Http\Controllers\Frontend\VideoController as FVideo;
+use App\Http\Controllers\Frontend\StyleController as FStyle;
 use Illuminate\Support\Facades\Route;
 
 Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLanguage'], function () {
@@ -25,6 +27,14 @@ Route::group(['prefix' => '/', 'as' => 'frontend.', 'middleware' => 'frontLangua
     Route::post('/newsletter-add-new', [FHome::class, 'newsletter'])->name('newsletter');
     Route::get('/newsletter/{id}/{token}', [FHome::class, 'verifyMail'])->name('verifyMail');
     Route::get('18', [FHome::class, 'agreeTerm'])->name('18');
+
+    Route::get('videos', [FVideo::class, 'index'])->name('videos');
+
+    Route::get('styles', [FStyle::class, 'index'])->name('styles');
+    Route::get('style/{slug}', [FStyle::class, 'show'])->name('selectedStyle');
+
+
+    Route::get('repair-packages', [FHome::class, 'packages'])->name('repair-packages');
     Route::get('mail/test', function () {
         return view('backend.mail.send');
     });

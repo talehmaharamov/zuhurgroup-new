@@ -16,7 +16,6 @@ class CategoryController extends Controller
             return abort(404);
         }
         $contents = $category->content()->paginate(9);
-
         return view('frontend.content.index', get_defined_vars());
     }
 }
