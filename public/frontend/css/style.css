@@ -5,6 +5,24 @@
 * {
   outline: none !important;
 }
+
+
+
+.repair-and-design {
+    height:316px;
+}
+
+.repair-and-design a,  .repair-and-design img {
+    height:100%; 
+}
+
+.body {
+    overflow-x:hidden;
+}
+.swiper-slide {
+    background-position: center !important;
+}
+
 .section-title h2 {
     text-align: center;
     font-size: 18px;
@@ -207,7 +225,7 @@ button[type=submit] {
 .whats-float {
     position: fixed;
     transform: translate(135px, 0px);
-    top: 40%;
+    top: 34%;
     right: 0;
     width: 180px;
     border-radius: 8px 0 0 8px;
@@ -254,7 +272,7 @@ button[type=submit] {
 .whats-float1 {
     position: fixed;
     transform: translate(135px, 0px);
-    top: 31.5%;
+    top: 25%;
     right: 0;
     width: 180px;
     border-radius: 8px 0 0 8px;
@@ -907,7 +925,7 @@ button[type=submit] {
 }
 .navbar .container .menu ul li {
   margin: 0;
-  margin-left: 40px;
+  margin-left: 15px;
   padding: 0;
   list-style: none;
   position: relative;
@@ -1378,7 +1396,7 @@ button[type=submit] {
   transform: scale(1);
 }
 .logos figure img {
-  width: 100%;
+  width: 90%;
 }
 .logos figure h6 {
   width: 100%;
@@ -1770,37 +1788,7 @@ button[type=submit] {
   font-weight: 600;
   margin-bottom: 30px;
 }
-.get-consultation p {
-  display: block;
-  padding-right: 20%;
-  margin-bottom: 40px;
-}
-.get-consultation a {
-  height: 60px;
-  line-height: 60px;
-  float: left;
-  color: #fff;
-  font-size: 14px;
-  font-weight: 600;
-  padding-bottom: 10px;
-  position: relative;
-  background: #26282b;
-  padding: 0 40px;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -ms-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
-}
-.get-consultation a i {
-  margin-left: 10px;
-}
-.get-consultation a:hover {
-  text-decoration: none;
-  background: #fff;
-  color: #9f8054;
-}
+
 
 /* RECENT POSTS */
 .recent-posts {
@@ -3178,6 +3166,24 @@ button[type=submit] {
   }
 }
 /* RESPONSIVE TABLET FIXES */
+
+
+
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) {
+    .photo-gallery .gallery li {
+    width: 50% !important;
+  }
+
+}
+
+@media only screen and (max-width: 576px), only screen and (max-device-width: 576px) {
+    .photo-gallery .gallery li {
+    width: 100% !important;
+  }
+
+}
+
+    
 @media only screen and (max-width: 991px), only screen and (max-device-width: 991px) {
   .side-navigation .side-content {
     display: none;
@@ -3542,6 +3548,77 @@ button[type=submit] {
     float: left;
     margin-top: 5px;
   }
+}
+
+
+
+.service-box {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 13px;
+    height: 330px;
+    margin: 15px 0;
+}
+
+.service-box a {
+    display: block;
+    height: 100%;
+    position: relative;
+    border-radius: 13px;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+  .service-box a:hover {box-shadow: rgba(193, 166, 137, 0.48) 6px 2px 16px 0px, rgba(255, 255, 255, 0.8) -6px -2px 16px 0px;}
+  
+  .service-box a:hover .service-info {
+    transform: none;
+}
+
+.service-box a:hover .service-info p {
+    opacity: 1;
+}
+
+.service-box a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .77;
+    border-radius: 13px;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(#000000));
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
+}
+
+.service-box a .service-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    text-align: center;
+    padding-bottom: 30px;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+    will-change: transform;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+}
+
+.service-box a .service-info h5 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.service-box a .service-info p {
+    color: rgba(255, 255, 255, 0.53);
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
 }
 
 /*# sourceMappingURL=style.css.map */

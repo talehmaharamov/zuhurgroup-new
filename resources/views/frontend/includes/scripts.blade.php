@@ -9,6 +9,7 @@
 <script src="{{asset('frontend/js/jquery.stellar.js')}}"></script>
 <script src="{{asset('frontend/js/isotope.min.js')}}"></script>
 <script src="{{asset('frontend/js/scripts.js')}}"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 <script type="text/javascript">
     var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
     (function () {
