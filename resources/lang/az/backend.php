@@ -196,6 +196,7 @@ return array (
   'search-result' => 'Axtarış nəticəsi',
   'security' => 'Təhlükəsizlik',
   'see-all' => 'Hamısına bax',
+  'selectedStyle' => 'Tək üslub',
   'send' => 'Göndər',
   'send-message' => 'Mesajı Göndər',
   'seo-settings' => 'Seo Tənzimləmələri',

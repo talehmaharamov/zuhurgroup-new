@@ -11,7 +11,6 @@ return new class extends Migration {
             $table->id();
             $table->string('slug', 30);
             $table->boolean('is_home')->default(0);
-            $table->unsignedBigInteger('style_id')->nullable();
             $table->string('photo');
             $table->boolean('other')->default(0);
             $table->boolean('status')->default(1);

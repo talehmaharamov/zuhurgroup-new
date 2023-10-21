@@ -28,7 +28,7 @@ class HomeController extends Controller
             ->has('content', '>=', 3)
             ->get();
         $packages = Packages::where('status', 1)->orderBy('id', 'desc')->get();
-        $styles = Style::where('status',1)->get();
+        $styles = Style::where('status',1)->where('is_home',1)->orderBy('created_at','desc')->get();
         return view('frontend.index', get_defined_vars());
 
     }

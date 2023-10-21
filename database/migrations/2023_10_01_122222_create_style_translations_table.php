@@ -12,6 +12,7 @@ return new class extends Migration {
             $table->foreignId('style_id')->unsigned();
             $table->string('locale')->index();
             $table->longText('name');
+            $table->longText('alt')->nullable();
             $table->longText('description')->nullable();
             $table->unique(['style_id', 'locale']);
             $table->foreign('style_id')->references('id')->on('styles')->onDelete('cascade');

@@ -5,7 +5,7 @@
         <div class="page-content">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-xl-9">
+                    <div class="col-xl-12">
                         <div class="card">
                             <form action="{{ route('backend.style.store') }}" class="needs-validation" novalidate
                                   method="post"
@@ -21,11 +21,22 @@
                                                  role="tabpanel">
                                                 <div class="form-group row">
                                                     <div class="mb-3">
-                                                        <label>@lang('backend.name') <span class="text-danger">*</span></label>
+                                                        <label>@lang('backend.name')
+                                                            <span class="text-danger">*</span>
+                                                        </label>
                                                         <input name="name[{{ $lan->code }}]" type="text"
                                                                class="form-control"
                                                                required="" placeholder="@lang('backend.name')">
                                                         {!! validation_response('backend.name') !!}
+                                                    </div>
+                                                    <div class="mb-3">
+                                                        <label>
+                                                            @lang('backend.alt')
+                                                        </label>
+                                                        <textarea name="alt[{{ $lan->code }}]" type="text"
+                                                                  class="form-control"
+                                                                  placeholder="@lang('backend.alt')"
+                                                                  rows="3"></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -36,16 +47,16 @@
                                                    placeholder="/news">
                                             {!! validation_response('backend.slug') !!}
                                         </div>
-                                        <div class="mb-3">
-                                            <label>@lang('backend.parent') @lang('backend.style')</label>
-                                            <select name="parent" type="text" class="form-control">
-                                                <option value="">-</option>
-                                                @foreach($styles as $style)
-                                                    <option
-                                                        value="{{ $style->id }}">{{ $style->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
+                                        {{--                                        <div class="mb-3">--}}
+                                        {{--                                            <label>@lang('backend.parent') @lang('backend.style')</label>--}}
+                                        {{--                                            <select name="parent" type="text" class="form-control">--}}
+                                        {{--                                                <option value="">-</option>--}}
+                                        {{--                                                @foreach($styles as $style)--}}
+                                        {{--                                                    <option--}}
+                                        {{--                                                        value="{{ $style->id }}">{{ $style->translate(app()->getLocale())->name ?? __('backend.translation-not-found') }}</option>--}}
+                                        {{--                                                @endforeach--}}
+                                        {{--                                            </select>--}}
+                                        {{--                                        </div>--}}
                                         <div class="mb-3">
                                             <label>@lang('backend.photo')
                                                 <span class="text-danger">*</span></label>
