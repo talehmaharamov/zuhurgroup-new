@@ -17,6 +17,14 @@
         </span>
     </a>
 </div>
+<div class="whats-float2">
+    <a href="tel:{{ settings('phone') }}">
+        <i class="fas fa-phone"></i>
+        <span>@lang('backend.phone')<br>
+            <small>{{ settings('phone') }}</small>
+        </span>
+    </a>
+</div>
 <div class="preloader">
     <div class="layer"></div>
     <div class="inner">
